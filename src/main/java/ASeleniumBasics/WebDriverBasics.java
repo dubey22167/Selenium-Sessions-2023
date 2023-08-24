@@ -33,4 +33,12 @@ public class WebDriverBasics {
 
 	}
 
+	
+	/*
+	 * //To change the font size in the Java text editor in Eclipse, follow these
+	 * steps: Go to the Window menu and select Preferences . In the Preferences
+	 * window, go to General -> Appearance -> Colors and Fonts . In the Colors and
+	 * Fonts window, scroll down and select Java Editor Text Font . Click the Edit
+	 * button.
+	 */
 }
