@@ -1,5 +1,7 @@
 package ASeleniumBasics;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +17,11 @@ public class FrameHandle {
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("http://www.londonfreelance.org/courses/frames/index.html");
+		Thread.sleep(3000);
+		
+		//It will give total count of frame.
+		List<WebElement>  listofframe= driver.findElements(By.tagName("frame"));
+		System.out.println(listofframe.size());
 
 		// There are three way to handle frame : with frame id/name , by index or we can
 		// create webElement and then we can handle :--
