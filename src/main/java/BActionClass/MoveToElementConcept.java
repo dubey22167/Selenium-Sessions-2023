@@ -12,27 +12,29 @@ public class MoveToElementConcept {
 
 	public static void main(String[] args) throws InterruptedException {
 
-
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.get("http://mrbool.com/search/");
-		
-		//it will handle user actions;; like, double click ,right click, drag n drop, mouse hover etc.
+
+		// it will handle user actions;; like, double click ,right click, drag n drop,
+		// mouse hover etc.
 		Actions action = new Actions(driver);
-		
-		//it will mouse hover to element
-		WebElement element =driver.findElement(By.className("menulink"));
-		action.moveToElement(element).build().perform();
+
+		// it will mouse hover to element
+		// build()-->> how many action want to build and then performed it. hence we use
+		// build and perform.
+		WebElement contentLink = driver.findElement(By.className("menulink"));
+		action.moveToElement(contentLink).build().perform();
 		Thread.sleep(3000);
-		
-		//it will click on element.
-		WebElement element1 = driver.findElement(By.xpath("//a[normalize-space()='Single Videos']"));
-		action.moveToElement(element1).click().build().perform();
+
+		// it will click on element.
+		WebElement singleVideos = driver.findElement(By.xpath("//a[normalize-space()='Single Videos']"));
+		singleVideos.click();
 		Thread.sleep(3000);
-		
+
 		driver.close();
-		
+
 	}
 
 }
