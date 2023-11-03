@@ -24,7 +24,7 @@ public class CaptureErrorText {
 
 		Thread.sleep(5000);
 
-		// get alert "error message text" and apply if conditions for validation.
+		// get alert "error message text" and apply "IF" conditions for validation.
 		String text = driver.findElement(By.xpath("(//h5[normalize-space()=\"That email address doesn't exist.\"])[1]"))
 				.getText();
 		System.out.println(text);
