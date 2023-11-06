@@ -20,20 +20,38 @@ public class ScreenShotConcept {
 		WebDriver driver = new EdgeDriver();
 
 		driver.get("https://app.hubspot.com/login");
-		Thread.sleep(500);
+		Thread.sleep(5000);
 
-		// Standard code for taking screenshots in Selenium
-		File SrcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(SrcFile, new File("./target/screenshots/page.png"));
+		// Standard code for taking screenshots in Selenium. 
+		/*
+		 * File SrcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		 * FileUtils.copyFile(SrcFile, new File("./target/screenshots/page.png"));
+		 */
 
 		takePageScreenShot(driver, "loginPage"); // pass the file name like loginPage, orderPage etc.
 
 		WebElement username = driver.findElement(By.id("username"));
-		WebElement pass = driver.findElement(By.id("password"));
+		WebElement password = driver.findElement(By.id("password"));
 		WebElement loginButton = driver.findElement(By.id("loginBtn"));
+		
 
-		takeElementScreenShot(loginButton, "loginbutton");
-	}
+		username.sendKeys("abc@gmail.com");
+		password.sendKeys("admin@1234");
+	
+		
+		Thread.sleep(5000);
+		
+		takeElementScreenShot(username, "Username");
+		takeElementScreenShot(password, "Password");
+		takeElementScreenShot(loginButton, "loginButton");
+		loginButton.click();
+		takePageScreenShot(driver, "loginError");
+		
+		
+		Thread.sleep(5000);
+		driver.close();
+		
+} //MainMthod
 
 	// 1*****PageScreenShot
 	public static void takePageScreenShot(WebDriver driver, String FileName) {
@@ -59,4 +77,4 @@ public class ScreenShotConcept {
 
 	}
 
-}
+} // Class
