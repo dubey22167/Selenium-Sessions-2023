@@ -20,7 +20,8 @@ public class WebDriverBasics {
 		String title = driver.getTitle();
 		Thread.sleep(3000);
 
-		driver.close();
+		driver.close();// it will only close the current window where driver is available . Not all.
+		//driver.quit();// Closing every associated window.
 
 		// Test Case validation
 		if (title.equals("Googlee")) {
