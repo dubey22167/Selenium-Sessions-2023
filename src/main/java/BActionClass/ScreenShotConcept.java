@@ -51,7 +51,7 @@ public class ScreenShotConcept {
 		Thread.sleep(5000);
 		driver.close();
 		
-} //MainMthod
+} //MainMthod End
 
 	// 1*****PageScreenShot
 	public static void takePageScreenShot(WebDriver driver, String FileName) {
@@ -77,4 +77,4 @@ public class ScreenShotConcept {
 
 	}
 
-} // Class
+} // Class End
