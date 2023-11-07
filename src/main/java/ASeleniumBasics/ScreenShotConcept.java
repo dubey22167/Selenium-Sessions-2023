@@ -1,4 +1,4 @@
-package BActionClass;
+package ASeleniumBasics;
 
 import java.io.File;
 import java.io.IOException;

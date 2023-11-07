@@ -1,4 +1,4 @@
-package BActionClass;
+package ASeleniumBasics;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +30,8 @@ public class ActionsEvents {
 				
 				Thread.sleep(3000);
 				driver.close();
+				
+				
 				
 				
 
