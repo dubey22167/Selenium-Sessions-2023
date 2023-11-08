@@ -1,8 +1,12 @@
 package ASeleniumBasics;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Util {
 
@@ -10,6 +14,7 @@ public class Util {
 
 	/**
 	 * Initialize Webdriver using Constructor.
+	 * 
 	 * @param driver
 	 */
 	public Util(WebDriver driver) {
@@ -65,6 +70,31 @@ public class Util {
 			System.out.println("Some exception occured while sending keys ");
 			System.out.println(e.getMessage());
 		}
+
+	}
+
+	/**
+	 * 5 waitForElementPresent Explicitly wait Method.
+	 * 
+	 * @param locator
+	 * @param timeOut
+	 */
+	public void waitForElementPresent(By locator, Duration timeOut) {
+		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+	}
+
+	/**
+	 * 6 waitForTitletPresent for the webPage--
+	 * 
+	 * @param title
+	 * @param timeOut
+	 */
+	public String waitForTitletPresent(String title, Duration timeOut) {
+		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		wait.until(ExpectedConditions.titleContains(title));
+		return driver.getTitle();
 
 	}
 

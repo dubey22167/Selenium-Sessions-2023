@@ -10,6 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class HubSpotLoginPageImplicitlyWait {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws InterruptedException {
 
 		WebDriverManager.edgedriver().setup();
@@ -32,12 +33,14 @@ public class HubSpotLoginPageImplicitlyWait {
 		WebElement loginButton = driver.findElement(By.id("loginBtn"));
 
 		username.sendKeys("okaytesting@gmail.com");
+		pass.sendKeys("123");
+		loginButton.click();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);// after this line for all elements wait time is
 																		// 10sec
 
 		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS); // wait time will be zero.
 
-	} // MainMethod End
+	} // MainMethod End*
 
 }// Class End
